@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Game
-comment0.text=\r\n\ \r\n\ @author\ JR,\ CS,\ SVC\r\n\ @version\ v1.4\ (03.06.2022\ 15\:35)\r\n
+comment0.text=\r\n\ \r\n\ @author\ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ \ \ \ \ \ \ \ \ \ \r\n\ @version\ v1.5\ (03.06.2022\ 19\:20)\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=

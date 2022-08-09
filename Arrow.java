@@ -12,9 +12,8 @@ import java.util.Random;
  *          Simon Cirdei
  *          Christoph Schramm
  *          
- * @version v1.4 (03.06.2022 15:35)
+ * @version v1.5 (03.06.2022 19:20)
  */
-
 public class Arrow extends Game
 {
     private Color localcolor, colpl1, colpl2;       // local variant of color of the arrow

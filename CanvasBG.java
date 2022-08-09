@@ -12,11 +12,11 @@ import java.util.*;
  * CanvasBG also moves the arrow trough the dashboard. Loops calculates the positions and points.
  * The change of the players is also implemented here. 
  * 
- * @author      Johannes Richter
- *              Simon Cirdei
- *              Christoph Schramm
- *              
- * @version     v1.4 (03.06.2022 15:35)
+ * @author  Johannes Richter
+ *          Simon Cirdei
+ *          Christoph Schramm
+ *          
+ * @version v1.5 (03.06.2022 19:20)
  */
 public class CanvasBG extends Game
 {

@@ -2,13 +2,16 @@ import java.awt.Color;
 
 /**
  * 
- * @author JR, CS, SVC
- * @version v1.4 (03.06.2022 15:35)
+ * @author  Johannes Richter
+ *          Simon Cirdei
+ *          Christoph Schramm
+ *          
+ * @version v1.5 (03.06.2022 19:20)
  */
 public class Game
 {
     private Terminal terminal;                                 //Global terminal
-    protected final String version            = "v1.4";        //This version number
+    protected final String version            = "v1.5";        //This version number
     protected static int canvasHeight         = 700;           //Height of the canvas in px.                Default: 700
     protected static int canvasWidth          = 1000;          //Width of the canvas in px.                 Default: 1000
     protected static int wallStart            = 100;           //Start of the wall in px.                   Default: 100
@@ -23,7 +26,7 @@ public class Game
     protected static final double timestep    = 0.05;          //Seconds of difference for trajectory calc. Default: 0.05
     protected static double angleMin          = 10;            //Minimum angle of the arrow in degrees.     Default: 10
     protected static double angleMax          = 60;            //Maximum angle of the arrow in degrees.     Default: 60
-    protected static double speedMin          = 7;             //Minimum speed of the arrow in px/s.        Default: 7
+    protected static double speedMin          = 10;            //Minimum speed of the arrow in px/s.        Default: 10
     protected static double speedMax          = 25;            //Maximum speed of the arrow in px/s.        Default: 25
     protected static final int player         = 2;             //Number of players                          Default: 2
     protected static final short qsA          = 30;            //value A for quickstart

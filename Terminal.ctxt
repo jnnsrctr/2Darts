@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Terminal
-comment0.text=\r\n\ \r\n\ The\ Terminal\ creates\ the\ field/dashboard.\r\n\ It\ is\ also\ able\ to\ open\ a\ console\ for\ the\ input\ of\ the\ game\ instructions.\r\n\ Terminal\ gets\ and\ checks\ the\ user\ inputs.\r\n\ \r\n\ One\ important\ thing\ is\ to\ give\ messages\ and\ feedback\ to\ the\ user.\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ game\ instruction\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ hints\ for\ inputs\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ help\r\n\ \r\n\ @author\ \ \ \ \ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ @version\ \ \ \ \ v1.4\ (03.06.2022\ 15\:35)\r\n
+comment0.text=\r\n\ \r\n\ The\ Terminal\ creates\ the\ field/dashboard.\r\n\ It\ is\ also\ able\ to\ open\ a\ console\ for\ the\ input\ of\ the\ game\ instructions.\r\n\ Terminal\ gets\ and\ checks\ the\ user\ inputs.\r\n\ \r\n\ One\ important\ thing\ is\ to\ give\ messages\ and\ feedback\ to\ the\ user.\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ game\ instruction\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ hints\ for\ inputs\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ help\r\n\ \r\n\ @author\ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ \ \ \ \ \ \ \ \ \ \r\n\ @version\ v1.5\ (03.06.2022\ 19\:20)\r\n
 comment1.params=
 comment1.target=void\ newGame()
 comment1.text=\r\n\ The\ method\ game\ checks\ all\ the\ inputs\ of\ the\ players\ and\ runs\ selected\ loops.\r\n\ Instructions\ and\ errors/feedback\ will\ be\ given\r\n
@@ -16,8 +16,8 @@ comment2.text=\r\n\ The\ method\ checks\ explicity\ the\ user\ input\ for\ the\ 
 comment3.params=
 comment3.target=void\ inputForDeveloperMode()
 comment3.text=\r\n\ The\ method\ checks\ explicity\ the\ user\ input\ for\ the\ target-size\r\n
-comment4.params=
-comment4.target=void\ startGame()
+comment4.params=restart
+comment4.target=void\ startGame(boolean)
 comment4.text=\r\n\ the\ method\ starts\ the\ game\:\r\n\ \ \ \ \ \ \ \ \ \ -\ inputs\ will\ be\ collected\r\n\ \ \ \ \ \ \ \ \ \ -\ score\ is\ initialised\ to\ zero\r\n\ \ \ \ \ \ \ \ \ \ -\ rounds\ is\ initialised\ to\ 1\r\n\ \ \ \ \ \ \ \ \ \ -\ the\ first\ player\ player\ becomes\ the\ currentplayer\r\n\ \ \ \ \ \ \ \ \ \ -\ a\ new\ surface\ (canvas)\ will\ be\ opened\r\n\ \ \ \ \ \ \ \ \ \ -\ printing\ of\ score\ and\ archers\r\n
 comment5.params=
 comment5.target=void\ swapPlayers()

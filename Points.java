@@ -8,7 +8,7 @@ import java.awt.*;
  *              Simon Cirdei
  *              Christoph Schramm
  *          
- * @version     v1.4 (03.06.2022 15:35)
+ * @version     v1.5 (03.06.2022 19:20)
  */
 public class Points extends Game
 {

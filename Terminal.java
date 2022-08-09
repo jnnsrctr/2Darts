@@ -13,10 +13,11 @@ import java.awt.event.KeyListener;
  *              - hints for inputs
  *              - help
  * 
- * @author      Johannes Richter
- *              Simon Cirdei
- *              Christoph Schramm
- * @version     v1.4 (03.06.2022 15:35)
+ * @author  Johannes Richter
+ *          Simon Cirdei
+ *          Christoph Schramm
+ *          
+ * @version v1.5 (03.06.2022 19:20)
  */ 
 public class Terminal extends Game
 {
@@ -43,11 +44,23 @@ public class Terminal extends Game
             if (input.equals("s")) {    // if s, the game will start
                 //only start the game if game is not yet running
                 if(gameRunning == false) {
-                    inputForDartboard();
-                    startGame();
+                    ea = super.qsA;
+                    starttarget = super.qsB - 4 * super.qsA - super.qsA / 2;
+                    // output for player  :) 
+                    System.out.println("SUCCESS: Quickstart was selected. Let's go!");
+                    System.out.println("-------------------------------------------------------------");
+                    startGame(false);
                     gameRunning = true;
                 } else {
-                    System.out.println("ERROR. The game is already running. Please press n for the next turn.");
+                    System.out.print("The game is already running. Do you want to reset it? [y/n] ");
+                    String securityQuestion = scanner.nextLine();  // read the input
+                    if (securityQuestion.equals("y")) {
+                        startGame(true);
+                    } else if(securityQuestion.equals("n")) {
+                        System.out.println("Okay, no reset. Press 'n' to keep on playing: ");
+                    } else {
+                        System.out.println("You didn't enter 'y' nor 'n '. Press 'n' to keep on playing: ");
+                    }
                 }
             }  // if d, the game will start in dev-mode (ALL INPUTS)
             else if (input.equals("d")) {
@@ -55,35 +68,21 @@ public class Terminal extends Game
                 if(gameRunning == false) {
                     inputForDeveloperMode();
                     inputForDartboard();
-                    startGame();
+                    startGame(false);
                     gameRunning = true;
                 } else {
-                    System.out.println("ERROR. The game is already running. Please press n for the next turn.");
-                }
-            }  // if d, the game will quickstart without any inputs
-            else if (input.equals("q")) {
-                //only start the game if game is not yet running
-                if(gameRunning == false) {
-                    ea = super.qsA;
-                    starttarget = super.qsB - 4 * super.qsA - super.qsA / 2;
-                    // output for player  :) 
-                    System.out.println("SUCCESS: Quick start was selected. Let's go!");
-                    System.out.println("-------------------------------------------------------------");
-                    startGame();
-                    gameRunning = true;
-                } else {
-                    System.out.println("ERROR. The game is already running. Please press n for the next turn.");
+                    System.out.println("Unfortunately, a game in DEV MODE cannot be restarted.");
+                    System.out.print("You can either keep on playing (n) or reset the scores (s). ");
                 }
             } // if n, next turn
             else if (input.equals("n")) {
                 if(gameRunning == false) {  //check if game is already running
-                    System.out.println("ERROR. The game is not yet running. Please press s to start it first.");
+                    System.out.println("ERROR. The game is not yet running. Please start it first.");
                 } else {                    //next turn is allowed
                     screenbg.clearField();  //remove old arrows
                     swapPlayers();          //swap the archers
                     turn();
                 }
-                
             }
             // if e, the game ends and the score will be printed
             else if (input.equals("e")) {
@@ -169,20 +168,12 @@ public class Terminal extends Game
      */
     public void inputForDeveloperMode() {
         //display warning
-        System.out.println("WARNING. You started the developer mode.");
-        System.out.println("Wrong inputs can cause weird behavior and are not being checked.");
+        System.out.println("WARNING. You started the game in DEV MODE.");
+        System.out.println("Wrong inputs can cause weird behavior and are not checked.");
         System.out.println("-------------------------------------------------------------");
-        //ask for canvas size
-        System.out.print("Enter value for canvasHeight [Default: 700]: ");
+        //ask for all the variables and check if its a number(int or double)
+        System.out.print("Enter width of the canvas [Default: 1000]: ");
         Scanner inputDimensions = new Scanner(System.in);
-            while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
-                try {
-                    super.canvasHeight = Integer.parseInt(inputDimensions.nextLine());
-                    break;
-                } catch (NumberFormatException nfe) {
-                    System.out.print("ERROR. Not an integer number (NaN). Try again: ");
-                }
-        System.out.print("Enter value for canvasWidth [Default: 1000]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.canvasWidth = Integer.parseInt(inputDimensions.nextLine());
@@ -190,7 +181,15 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for wallStart [Default: 100]: ");
+        System.out.print("Enter height of the canvas [Default: 700]: ");
+            while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
+                try {
+                    super.canvasHeight = Integer.parseInt(inputDimensions.nextLine());
+                    break;
+                } catch (NumberFormatException nfe) {
+                    System.out.print("ERROR. Not an integer number (NaN). Try again: ");
+                }
+        System.out.print("Enter where the wall starts (px from top) [Default: 100]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.wallStart = Integer.parseInt(inputDimensions.nextLine());
@@ -198,7 +197,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for wallThickness [Default: 20]: ");
+        System.out.print("Enter thickness of the wall [Default: 20]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.wallThickness = Integer.parseInt(inputDimensions.nextLine());
@@ -206,7 +205,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for arrowWidth [Default: 25]: ");
+        System.out.print("Enter width of the arrow [Default: 25]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.arrowWidth = Integer.parseInt(inputDimensions.nextLine());
@@ -214,7 +213,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for arrowHeight [Default: 3]: ");
+        System.out.print("Enter height of the arrow [Default: 3]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.arrowHeight = Integer.parseInt(inputDimensions.nextLine());
@@ -222,7 +221,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for gravity [Default: 9.81]: ");
+        System.out.print("Enter gravity in px/s^2 [Default: 9.81]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.gravity = Double.parseDouble(inputDimensions.nextLine());
@@ -230,7 +229,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not a double number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for angleMin [Default: 10]: ");
+        System.out.print("Enter minimum shooting angle [Default: 10]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.angleMin = Integer.parseInt(inputDimensions.nextLine());
@@ -238,7 +237,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for angleMax [Default: 60]: ");
+        System.out.print("Enter maximum shooting angle [Default: 60]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.angleMax = Integer.parseInt(inputDimensions.nextLine());
@@ -246,7 +245,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for speedMin [Default: 7]: ");
+        System.out.print("Enter minimum shooting speed [Default: 10]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.speedMin = Integer.parseInt(inputDimensions.nextLine());
@@ -254,7 +253,7 @@ public class Terminal extends Game
                 } catch (NumberFormatException nfe) {
                     System.out.print("ERROR. Not an integer number (NaN). Try again: ");
                 }
-        System.out.print("Enter value for speedMax [Default: 25]: ");
+        System.out.print("Enter maximum shooting speed [Default: 25]: ");
             while (true) //check if input is a number. source: https://stackoverflow.com/questions/2912817/how-to-use-scanner-to-accept-only-valid-int-as-input
                 try {
                     super.speedMax = Integer.parseInt(inputDimensions.nextLine());
@@ -273,13 +272,16 @@ public class Terminal extends Game
      *          - a new surface (canvas) will be opened
      *          - printing of score and archers
      */
-    public void startGame() {
+    public void startGame(boolean restart) {
         super.currentPlayer = 1;
         super.scorePlayer1 = 0;
         super.scorePlayer2 = 0;
         super.rounds = 0;
-        //game.calcVars();
-        screenbg = new CanvasBG ((short)ea, starttarget);
+        if(restart == false) {
+            screenbg = new CanvasBG ((short)ea, starttarget);
+        } else {
+            screenbg.clearField();
+        }
         screenbg.visible(true);
         screenbg.printScore(super.scorePlayer1, super.scorePlayer2);
         screenbg.printArcher();
@@ -389,9 +391,8 @@ public class Terminal extends Game
      */
     public void howTo() {
         System.out.println("-------------------------------------------------------------");
-        System.out.println("s = start game with inputs for a+b ");
-        System.out.println("d = start game with ALL inputs            q = quickstart game");
-        System.out.println("n = next player        e = end game       h = help");
+        System.out.println("s = Start game                n = Next Player    e = End game");
+        System.out.println("d = Start game in DEV MODE                       h = Help");
         System.out.println("-------------------------------------------------------------");
     }
     
