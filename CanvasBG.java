@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.*;
 
 /**
  * The class CanvasBG is one of the most important classes for the game 2Darts.
@@ -15,7 +16,7 @@ import java.awt.geom.*;
  *              Simon Cirdei
  *              Christoph Schramm
  *              
- * @version     v1.3 (02.06.2022 16:45)
+ * @version     v1.4 (03.06.2022 15:35)
  */
 public class CanvasBG extends Game
 {
@@ -43,7 +44,7 @@ public class CanvasBG extends Game
         curplay = 1;                    //init local player number one
         score1 = super.scorePlayer1;
         score2 = super.scorePlayer2;
-        screenbg = new Canvas("2Darts", super.canvasWidth, super.canvasHeight, super.bgColor);
+        screenbg = new Canvas("2Darts " + super.version, super.canvasWidth, super.canvasHeight, super.bgColor);
         printWall();                    
         printTarget();
     }
@@ -66,6 +67,8 @@ public class CanvasBG extends Game
         // Create and show the arrow
         Arrow thisArrow = new Arrow(arrowcolor, screenbg);
         thisArrow.draw();
+        
+        screenbg.wait(300);;
         
         // Let the arrow fly
         fly(thisArrow);
@@ -120,23 +123,23 @@ public class CanvasBG extends Game
         // checking of the boolean
         while(!evaluated) {
             // will set the score to 50, if arrow hits the area of bullseye
-            if(thisArrow.giveYposition() >= targettop + 4 * a && thisArrow.giveYposition() <= targettop + 5 * a) {
+            if((thisArrow.giveYposition() >= targettop + 4 * a) && (thisArrow.giveYposition() <= targettop + 5 * a) && (thisArrow.giveXposition() == super.wallThickness)) {
                 evalscore = 50;
                 evaluated = true;
                 
-                // area which has been hitted would blink for 3 times
+                // area which has been hit blinks 3 times
                 while(blink < 3) {
                         screenbg.setForegroundColor(Color.yellow);
                         Rectangle bullseye = new Rectangle(0, targettop+4*a, super.wallThickness, a);
                         screenbg.fill(bullseye);
-                        screenbg.wait(200);         // delay for 200ms
+                    screenbg.wait(200);         // delay for 200ms
                         printRed();
-                        screenbg.wait(200);         // delay for 200ms
-                        blink++;
+                    screenbg.wait(200);         // delay for 200ms
+                    blink++;
                 }
             }
             // will set the score to 25, if arrow hits the green area
-            else if(thisArrow.giveYposition() >= targettop + 3 * a && thisArrow.giveYposition() <= targettop + 6 * a) {
+            else if((thisArrow.giveYposition() >= targettop + 3 * a) && (thisArrow.giveYposition() <= targettop + 6 * a) && (thisArrow.giveXposition() == super.wallThickness)) {
                 evalscore = 25;
                 evaluated = true;
                 while(blink < 3) {
@@ -144,15 +147,15 @@ public class CanvasBG extends Game
                         Rectangle greenbox = new Rectangle(0, targettop+3*a, super.wallThickness, 3*a);
                         screenbg.fill(greenbox);
                         printRed();
-                        screenbg.wait(200);     // delay for 200ms
+                    screenbg.wait(200);     // delay for 200ms
                         printGreen();
                         printRed();
-                        screenbg.wait(200);     // delay for 200ms
+                    screenbg.wait(200);     // delay for 200ms
                         blink++;
                 }
             }
             // will set the score to 10, if arrow hits the black area 
-            else if(thisArrow.giveYposition() >= targettop && thisArrow.giveYposition() <= targettop + 9 * a) {
+            else if((thisArrow.giveYposition() >= targettop) && (thisArrow.giveYposition() <= targettop + 9 * a) && (thisArrow.giveXposition() == super.wallThickness)) {
                 evalscore = 10;
                 evaluated = true;
                 while(blink < 3) {
@@ -263,7 +266,7 @@ public class CanvasBG extends Game
                     curplay = 2;
                 }
             }
-            // If the current player is no 2, the archer one will move to left, and the second move right
+        // If the current player is no 2, the archer one will move to left, and the second move right
         } else if(curplay == 2) {
             Archer1 = new Archer (2, super.colorPlayer1, screenbg);
             Archer2 = new Archer (1, super.colorPlayer2, screenbg);
@@ -285,7 +288,6 @@ public class CanvasBG extends Game
      */
     public void clearField()
     {
-
         screenbg.setForegroundColor(super.bgColor);
         // if the arrow hit the target, it will be re painted
         Rectangle hitarrows = new Rectangle(super.wallThickness, 0, super.arrowWidth, super.canvasHeight);
@@ -305,7 +307,7 @@ public class CanvasBG extends Game
         score2 = inputscore2;           //init of score player one
         screenbg.setVisible(true);
         screenbg.setForegroundColor(super.bgColor);
-        screenbg.fillRectangle(super.scoreXpos, super.scoreYpos - 20, 200, 50);
+        screenbg.fillRectangle(super.scoreXpos, super.scoreYpos - 20, super.canvasWidth - super.scoreXpos, 50);
         // set position of the scores and draw them
         Points Points1 = new Points(1, score1, screenbg);   
         Points1.draw();
@@ -321,4 +323,3 @@ public class CanvasBG extends Game
         screenbg.setVisible(state);
     }
 }
-

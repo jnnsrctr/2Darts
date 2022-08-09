@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Points
-comment0.text=\r\n\ The\ class\ points\ sets\ the\ color\ of\ the\ player-scores\ \r\n\ and\ prints\ the\ scores\ on\ the\ dashboard.\r\n\ \r\n\ @author\ \ \ \ \ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ \ \ \ \ \ \ \ \ \ \r\n\ @version\ \ \ \ \ v1.3\ (02.06.2022\ 16\:45)\r\n
+comment0.text=\r\n\ The\ class\ points\ sets\ the\ color\ of\ the\ player-scores\ \r\n\ and\ prints\ the\ scores\ on\ the\ dashboard.\r\n\ \r\n\ @author\ \ \ \ \ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ \ \ \ \ \ \ \ \ \ \r\n\ @version\ \ \ \ \ v1.4\ (03.06.2022\ 15\:35)\r\n
 comment1.params=playerno\ playerscore\ usedcanvas
 comment1.target=Points(int,\ int,\ Canvas)
 comment1.text=\r\n\ Constructor\ for\ instances\ of\ Points\r\n\r\n\ @param\ playerno\ \ \ \ current\ player\r\n\ @param\ playerscore\ score\ of\ player\ \ \ \ \r\n\ @param\ usedcanvas\ \ canvas\ where\ to\ plot\ the\ points/score\ \r\n

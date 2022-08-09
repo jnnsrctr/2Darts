@@ -11,7 +11,7 @@ import java.lang.*;
  *          Simon Cirdei
  *          Christoph Schramm
  *          
- * @version v1.3 (02.06.2022 16:45)
+ * @version v1.4 (03.06.2022 15:35)
  */
 public class Archer extends Game
 {   

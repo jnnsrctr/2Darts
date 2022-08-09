@@ -8,7 +8,7 @@ import java.awt.*;
  *              Simon Cirdei
  *              Christoph Schramm
  *          
- * @version     v1.3 (02.06.2022 16:45)
+ * @version     v1.4 (03.06.2022 15:35)
  */
 public class Points extends Game
 {
@@ -32,7 +32,7 @@ public class Points extends Game
         screenbg = usedcanvas;
         yPosition = super.scoreYpos + (player-1) * 20;  //y-Position of the score: access from super-class  
         
-        //proof of player and set the color of this score  
+        //set the color of this score  
         if(player == 1) {
             textcolor = super.colorPlayer1;
         } else if(player == 2) {
@@ -48,6 +48,6 @@ public class Points extends Game
     {
         screenbg.setVisible(true);
         screenbg.setForegroundColor(textcolor);
-        screenbg.drawString("Score Player " + player + ": " + score, super.scoreXpos, yPosition);
+        screenbg.drawString("Player " + player + ": " + score + " Points", super.scoreXpos, yPosition);
     }
 }

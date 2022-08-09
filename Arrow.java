@@ -12,7 +12,7 @@ import java.util.Random;
  *          Simon Cirdei
  *          Christoph Schramm
  *          
- * @version v1.3 (02.06.2022 16:45)
+ * @version v1.4 (03.06.2022 15:35)
  */
 
 public class Arrow extends Game
@@ -23,9 +23,8 @@ public class Arrow extends Game
     private int localcurplay;                       // count which players turn it is
     Random r1 = new Random();                       // random number between 0 and 1
     Random r2 = new Random();                       // random number between 0 and 1
-    private double speed = super.speedMin + (super.speedMax-super.speedMin) * r1.nextDouble();   // may be 18-30
-    private double angle = super.angleMin + (super.angleMax-super.angleMin) * r2.nextDouble();   // may be 10-60
-    private double time = 0;                        // time setting  
+    private double speed, angle;                    // speed and angle of the arrow
+    private double time = 0;                        // time for the trajectory calc  
 
     /**
      * Constructor for instances of Arrow
@@ -39,6 +38,8 @@ public class Arrow extends Game
         yPosition = super.arrowYpos;     //y-Position of the Arrow: access from super-class  
         screenbg = usedcanvas;
         localcolor = inputcolor;
+        speed = super.speedMin + (super.speedMax-super.speedMin) * r1.nextDouble();
+        angle = super.angleMin + (super.angleMax-super.angleMin) * r2.nextDouble();
     }
 
     /**
@@ -75,8 +76,12 @@ public class Arrow extends Game
         // add to the clock
         time += super.timestep;
         
-        // Check if arrow lands on the floor
-        if(yPosition >= (super.canvasHeight - super.arrowHeight)) {
+        
+        if((yPosition >= (super.canvasHeight - super.arrowHeight)) && (xPosition <= super.wallThickness)) {
+            yPosition = (int)(super.canvasHeight - super.arrowHeight);
+            xPosition = (int)(super.wallThickness);
+        } // Check if arrow lands on the floor
+        else if(yPosition >= (super.canvasHeight - super.arrowHeight)) {
             yPosition = (int)(super.canvasHeight - super.arrowHeight);
             speed=0;
         }  // Check if wall is hit
