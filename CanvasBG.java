@@ -42,8 +42,8 @@ public class CanvasBG extends Game
         a = inputa;                     
         targettop = starttarget;        
         curplay = 1;                    //init local player number one
-        score1 = super.scorePlayer1;
-        score2 = super.scorePlayer2;
+        score1 = 0;
+        score2 = 0;
         screenbg = new Canvas("2Darts " + super.version, super.canvasWidth, super.canvasHeight, super.bgColor);
         printWall();                    
         printTarget();
@@ -68,7 +68,7 @@ public class CanvasBG extends Game
         Arrow thisArrow = new Arrow(arrowcolor, screenbg);
         thisArrow.draw();
         
-        screenbg.wait(300);;
+        screenbg.wait(300);
         
         // Let the arrow fly
         fly(thisArrow);
@@ -89,7 +89,7 @@ public class CanvasBG extends Game
     {
         boolean done =  false;
         while(!done) {
-            screenbg.wait(20);           // kurze Pause
+            screenbg.wait(super.frequency);           // kurze Pause
             thisArrow.move();
             // Stop if the arrow hits the ground
             if(thisArrow.giveYposition() >= (super.canvasHeight - super.arrowHeight)) {
@@ -257,10 +257,10 @@ public class CanvasBG extends Game
             Archer1 = new Archer (1, super.colorPlayer1, screenbg);
             Archer2 = new Archer (2, super.colorPlayer2, screenbg);
             while(!swapdone) {
-                screenbg.wait(20);           // short waiting time
+                screenbg.wait(super.frequency);           // short waiting time
                 Archer1.stepRight();
                 Archer2.stepLeft();
-                // Stop if the arrow hits the ground
+                // Stop if the swap is done
                 if(Archer2.giveXposition() <= (super.archerXpos)) {
                     swapdone = true;
                     curplay = 2;
@@ -271,10 +271,10 @@ public class CanvasBG extends Game
             Archer1 = new Archer (2, super.colorPlayer1, screenbg);
             Archer2 = new Archer (1, super.colorPlayer2, screenbg);
             while(!swapdone) {
-                screenbg.wait(20);           // short waiting time
+                screenbg.wait(super.frequency);           // short waiting time
                 Archer2.stepRight();
                 Archer1.stepLeft();
-                // Stop if the arrow hits the ground
+                // Stop if the swap is done
                 if(Archer1.giveXposition() <= (super.archerXpos)) {
                     swapdone = true;
                     curplay = 1;
@@ -290,7 +290,7 @@ public class CanvasBG extends Game
     {
         screenbg.setForegroundColor(super.bgColor);
         // if the arrow hit the target, it will be re painted
-        Rectangle hitarrows = new Rectangle(super.wallThickness, 0, super.arrowWidth, super.canvasHeight);
+        Rectangle hitarrows = new Rectangle(super.wallThickness, targettop, super.arrowWidth, super.canvasHeight-targettop);
         screenbg.fill(hitarrows);
         // if the arrow did not hit the target, it will be re painted
         Rectangle lostarrows = new Rectangle(super.wallThickness, super.canvasHeight - super.arrowHeight,
@@ -306,6 +306,7 @@ public class CanvasBG extends Game
         score1 = inputscore1;           //init of score player one
         score2 = inputscore2;           //init of score player one
         screenbg.setVisible(true);
+        //erase old scores
         screenbg.setForegroundColor(super.bgColor);
         screenbg.fillRectangle(super.scoreXpos, super.scoreYpos - 20, super.canvasWidth - super.scoreXpos, 50);
         // set position of the scores and draw them

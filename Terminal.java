@@ -159,7 +159,7 @@ public class Terminal extends Game
             }
         }
         // output for player  :) 
-        System.out.println("SUCCESS: Inputs checked and saved. Let's go!");
+        System.out.println("SUCCESS: Inputs saved and (a & b) checked. Let's go!");
         System.out.println("-------------------------------------------------------------");
     }
     

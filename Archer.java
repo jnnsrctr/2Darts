@@ -82,7 +82,7 @@ public class Archer extends Game
         erase();
             
         // Calculate new position and decide which direction to walk
-        xPosition += 1;
+        xPosition++;
         
         // Re-draw at the newly calculated position
         draw();
@@ -97,7 +97,7 @@ public class Archer extends Game
         erase();
             
         // Calculate new position and decide which direction to walk
-        xPosition -= 1;     
+        xPosition--;     
 
         // Re-draw at the newly calculated position
         draw();
