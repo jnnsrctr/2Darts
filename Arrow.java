@@ -79,6 +79,7 @@ public class Arrow extends Game
         if((yPosition >= (super.canvasHeight - super.arrowHeight)) && (xPosition <= super.wallThickness)) {
             yPosition = (int)(super.canvasHeight - super.arrowHeight);
             xPosition = (int)(super.wallThickness);
+            speed=0;
         } // Check if arrow lands on the floor
         else if(yPosition >= (super.canvasHeight - super.arrowHeight)) {
             yPosition = (int)(super.canvasHeight - super.arrowHeight);
@@ -86,6 +87,7 @@ public class Arrow extends Game
         }  // Check if wall is hit
         else if(xPosition <= super.wallThickness && yPosition >= super.wallStart) {
             xPosition = (int)(super.wallThickness);
+            // reverse calculate yPos (one timestep before)
             yPosition += - 0.5 * super.gravity * Math.pow((time-super.timestep),2) + speed * Math.sin(Math.toRadians(angle)) * (time-super.timestep);
         }  // Check if over the wall
         else if(xPosition <= 0) {
