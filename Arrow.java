@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * 
  * @author CS, SVC, JR 
- * @version v1.1 (02.06.2022 15:10)
+ * @version v1.2 (02.06.2022 15:35)
  */
 
 public class Arrow extends Game
@@ -37,7 +37,7 @@ public class Arrow extends Game
         xPosition = super.arrowXpos;
         yPosition = super.arrowYpos;
         screenbg = usedcanvas;
-        localcolor  = inputcolor;
+        localcolor = inputcolor;
     }
 
     /**

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Points
-comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Points.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ v1.1\ (02.06.2022\ 15\:10)\r\n
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Points.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ v1.2\ (02.06.2022\ 15\:35)\r\n
 comment1.params=playerno\ playerscore\ usedcanvas
 comment1.target=Points(int,\ int,\ Canvas)
 comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Points\r\n

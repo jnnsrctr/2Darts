@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
  * Die Klasse game beinhaltet die wichtige Funktion, das Spielfeld zu erstellen.
  * 
  * @author JR, CS, SVC
- * @version v1.1 (02.06.2022 15:10)
+ * @version v1.2 (02.06.2022 15:35)
  */ 
 public class Terminal extends Game
 {
@@ -35,7 +35,8 @@ public class Terminal extends Game
                 turn();
             }
             else if (input.equals("e")) {
-                noInput = false; 
+                noInput = false;
+                System.out.println("Game over.");
                 returnPoints();
                 System.exit(0);
             }
@@ -61,7 +62,8 @@ public class Terminal extends Game
     public void inputForDartboard() {
         //ask for a
         System.out.println("Please enter a value for a [between 1 & "
-        + (super.canvasHeight-super.wallStart)/9+"]. Hint: "+((super.canvasHeight-super.wallStart)/30)+" is a good value");
+        + (super.canvasHeight-super.wallStart)/9+"]. Hint: "
+        +((super.canvasHeight-super.wallStart)/30)+" is a good value.");
         boolean aOK = false;
         while(!aOK) {
             Scanner inputDimensions = new Scanner(System.in);
@@ -78,7 +80,8 @@ public class Terminal extends Game
         
         //ask for b
         System.out.println("Please enter a value for b [between "+(super.wallStart+(4*ea)+ahalbe)
-        +" & "+(super.canvasHeight-(4*ea)-ahalbe)+"]. Hint: "+((super.canvasHeight-super.wallStart)/2+super.wallStart)+" is a good value");
+        +" & "+(super.canvasHeight-(4*ea)-ahalbe)+"]. Hint: "
+        +((super.canvasHeight-super.wallStart)/2+super.wallStart)+" is a good value.");
         boolean bOK = false;
         while(!bOK) {
             Scanner inputDimensions = new Scanner(System.in);
@@ -100,15 +103,15 @@ public class Terminal extends Game
      * Methode zur Ausgabe eines Error bezüglich der Oberfläche
      */
     public void errorValue() {
-        System.out.println ("ERROR. Please enter a valid value. The limits can be seen above.");
+        System.out.println ("ERROR. Please enter a valid value. The limits can be seen above. You may try again.");
     }
     
     /**
      * Methode zur Ausgabe eines Willkommen-Textes
      */
     public void welcomeText() {
-        System.out.println("Welcome to 2D-Darts" + "\n\n" + "Before playing, here are the instructions:" +"\n");
-        System.out.println("- The red area (bullseye) gives 50 points" + "\n" + "- green (bull) gives 25 points" + "\n" + "- black gives 10 points" + "\n" + "- Everything else 0 points");
+        System.out.println("Welcome to 2Darts" + "\n\n" + "Before playing, here is the overview:" +"\n");
+        System.out.println("- The red area (bullseye) gives 50 points" + "\n" + "- Green (bull) gives 25 points" + "\n" + "- Black gives 10 points" + "\n" + "- Everything else 0 points");
         howTo();
     }
     
@@ -158,7 +161,7 @@ public class Terminal extends Game
     }
 
     public void turn() {
-        System.out.println("It's player  "+ super.currentPlayer +"'s turn.");
+        System.out.println("It's player "+ super.currentPlayer +"'s turn.");
                 
         int score = screenbg.shootArrow();
         
@@ -170,11 +173,11 @@ public class Terminal extends Game
         }
         
         if(score == 50) {
-            System.out.println("BULLSEYE! Player "+ super.currentPlayer +" won "+ score + " Points!");
+            System.out.println("BULLSEYE! Player "+ super.currentPlayer +" got "+ score + " Points! :)");
         } else if(score == 0) {
-            System.out.println("Player "+ super.currentPlayer +" missed.");
+            System.out.println("Player "+ super.currentPlayer +" missed. :(");
         } else {
-            System.out.println("Player "+ super.currentPlayer +" won "+ score + " Points.");
+            System.out.println("Player "+ super.currentPlayer +" got "+ score + " Points.");
         }
         
         screenbg.printScore(super.scorePlayer1, super.scorePlayer2);
@@ -189,9 +192,11 @@ public class Terminal extends Game
             System.out.println("Player 1 wins with " + super.scorePlayer1 + " points. Player 2 has " + super.scorePlayer2 + " points.");
         } else if(super.scorePlayer2 > super.scorePlayer1) {
             System.out.println("Player 2 wins with " + super.scorePlayer2 + " points. Player 1 has " + super.scorePlayer1 + " points.");
+        } else if((super.scorePlayer1 == 0) && (super.scorePlayer1 == 0)) {
+            System.out.println("Did you even play? Both players have " + super.scorePlayer1 + " points.");
         } else if(super.scorePlayer1 == super.scorePlayer2) {
             System.out.println("It's a tie! Both players have " + super.scorePlayer1 + " points.");
         }
-        System.out.println("Press Ctrl+W to exit this window.");
+        System.out.println("Press Ctrl+W to close this window.");
     }
 }

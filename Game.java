@@ -1,23 +1,14 @@
 import java.awt.Color;
 
 /**
- * Terminal soll mit der Main Methode ein neues Terminal starten. Von dort aus kann der Anwender
- * das Spiel bedienen. Dazu werden Eingaben gelesen und ausgewertet. 
- * Mögliche Anweisungen sind: 
- * 
- * s = Spielbeginn
- * n = Spielerwechsel
- * h = Hilfe inkl. Spielregeln
- * e = Punktestandausgabe und das Spiel wird beendet
- * Strg + w = Konsole schließen
  * 
  * @author JR, CS, SVC
- * @version v1.1 (02.06.2022 15:10)
+ * @version v1.2 (02.06.2022 15:35)
  */
 public class Game
 {
     private Terminal terminal;                                 //Global terminal
-    protected static final int canvasHeight = 709;             //Height of the canvas. Default: 700
+    protected static final int canvasHeight = 700;             //Height of the canvas. Default: 700
     protected static final int canvasWidth = 1000;             //Width of the canvas. Default: 1000
     protected static final int wallStart = 100;                //Start of the wall. Default: 100
     protected static final int wallThickness = 20;             //Thickness of the wall. Default: 20

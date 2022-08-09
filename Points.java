@@ -4,7 +4,7 @@ import java.awt.*;
  * Beschreiben Sie hier die Klasse Points.
  * 
  * @author (Ihr Name) 
- * @version v1.1 (02.06.2022 15:10)
+ * @version v1.2 (02.06.2022 15:35)
  */
 public class Points extends Game
 {

@@ -6,7 +6,7 @@ import java.lang.*;
  * Beschreiben Sie hier die Klasse Archer.
  * 
  * @author (Ihr Name) 
- * @version v1.1 (02.06.2022 15:10)
+ * @version v1.2 (02.06.2022 15:35)
  */
 public class Archer extends Game
 {   
@@ -35,7 +35,6 @@ public class Archer extends Game
         screenbg.setForegroundColor(color);
         screenbg.setVisible(true);
         // the head
-        //screenbg.fillCircle(910,640,5,5);
         screenbg.fillCircle(xPosition+8,yPosition,14);
         // the body top to bottom
         screenbg.drawLine(xPosition+15,yPosition+13,xPosition+15,yPosition+53);
@@ -52,7 +51,6 @@ public class Archer extends Game
         screenbg.eraseCircle(xPosition+8,yPosition,14);
         screenbg.setForegroundColor(super.bgColor); //da keine Methode, um die Linien zu entfernen existiert, weiß machen
         // the head
-        //screenbg.fillCircle(910,640,5,5);
         screenbg.fillCircle(xPosition+8,yPosition,14);
         // the body top to bottom
         screenbg.drawLine(xPosition+15,yPosition+13,xPosition+15,yPosition+53);

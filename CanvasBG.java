@@ -6,7 +6,7 @@ import java.awt.geom.*;
  * {@code Canvas}
  * 
  * @author CS, SVC, JR 
- * @version v1.1 (02.06.2022 15:10)
+ * @version v1.2 (02.06.2022 15:35)
  */
 public class CanvasBG extends Game
 {
