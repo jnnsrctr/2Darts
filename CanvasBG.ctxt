@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=CanvasBG
+comment0.text=\r\n\ Startet\ Canvas\r\n\ {@code\ Canvas}\r\n\ \r\n\ @author\ CS,\ SVC,\ JR\ \r\n\ @version\ v1.1\ (02.06.2022\ 15\:10)\r\n
+comment1.params=inputa\ starttarget
+comment1.target=CanvasBG(short,\ int)
+comment2.params=
+comment2.target=int\ shootArrow()
+comment2.text=\r\n\ Shoot\ an\ arrow\r\n
+comment3.params=
+comment3.target=void\ printBG()
+comment3.text=\r\n\ Draw\ the\ background\r\n
+comment4.params=
+comment4.target=void\ printArcher()
+comment4.text=\r\n\ Draw\ the\ two\ Archers\r\n
+comment5.params=currentplno
+comment5.target=void\ swapArcher(int)
+comment6.params=
+comment6.target=void\ clearField()
+comment6.text=\r\n\ Clear\ all\ arrows\r\n
+comment7.params=inputscore1\ inputscore2
+comment7.target=void\ printScore(int,\ int)
+comment7.text=\r\n\ Draw\ the\ two\ Scores\r\n
+comment8.params=state
+comment8.target=void\ visible(boolean)
+comment8.text=\r\n\ Show\ the\ canvas\r\n
+numComments=9

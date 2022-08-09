@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Game
+comment0.text=\r\n\ Terminal\ soll\ mit\ der\ Main\ Methode\ ein\ neues\ Terminal\ starten.\ Von\ dort\ aus\ kann\ der\ Anwender\r\n\ das\ Spiel\ bedienen.\ Dazu\ werden\ Eingaben\ gelesen\ und\ ausgewertet.\ \r\n\ M\u00F6gliche\ Anweisungen\ sind\:\ \r\n\ \r\n\ s\ \=\ Spielbeginn\r\n\ n\ \=\ Spielerwechsel\r\n\ h\ \=\ Hilfe\ inkl.\ Spielregeln\r\n\ e\ \=\ Punktestandausgabe\ und\ das\ Spiel\ wird\ beendet\r\n\ Strg\ +\ w\ \=\ Konsole\ schlie\u00DFen\r\n\ \r\n\ @author\ JR,\ CS,\ SVC\r\n\ @version\ v1.1\ (02.06.2022\ 15\:10)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ newGame()
+numComments=3

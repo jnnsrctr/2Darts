@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Archer
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Archer.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ v1.1\ (02.06.2022\ 15\:10)\r\n
+comment1.params=inputplayer\ archercolor\ usedcanvas
+comment1.target=Archer(int,\ java.awt.Color,\ Canvas)
+comment2.params=
+comment2.target=void\ draw()
+comment2.text=\r\n\ Es\ wird\ ein\ Archer\ an\ der\ von\ CanvasBG\ vorgegebenen\ Stelle\ und\ Farbe\r\n\ gezeichnet\r\n\ \r\n
+comment3.params=
+comment3.target=void\ eraseArcher()
+comment4.params=
+comment4.target=void\ stepRight()
+comment5.params=
+comment5.target=void\ stepLeft()
+comment6.params=
+comment6.target=int\ giveXposition()
+comment6.text=\r\n\ Supply\ other\ classes\ with\ the\ current\ X\ position\ of\ the\ Archer\r\n
+numComments=7

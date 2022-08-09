@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Arrow
+comment0.text=\r\n\ Arrow\r\n\ \r\n\r\n\ \r\n\ @author\ CS,\ SVC,\ JR\ \r\n\ @version\ v1.1\ (02.06.2022\ 15\:10)\r\n
+comment1.params=inputcolor\ usedcanvas
+comment1.target=Arrow(java.awt.Color,\ Canvas)
+comment1.text=\r\n\ Constructor\ for\ instances\ of\ Arrow\r\n\r\n\ @param\ xPos\ \ \ \ \ \ \ \ x-coordinate\ of\ the\ arrow\r\n\ @param\ yPos\ \ \ \ \ \ \ \ y-coordinate\ of\ the\ arrow\r\n\ @param\ ballcolor\ \ \ color\ of\ the\ arrow\r\n\ @param\ usedcanvas\ \ canvas\ where\ to\ plot\ the\ arrow\r\n
+comment2.params=
+comment2.target=void\ draw()
+comment2.text=\r\n\ Draw\ the\ arrow\ on\ the\ current\ position\ on\ the\ canvas\r\n
+comment3.params=
+comment3.target=void\ erase()
+comment3.text=\r\n\ Erase\ the\ arrow\ at\ his\ current\ position\r\n
+comment4.params=
+comment4.target=void\ move()
+comment4.text=\r\n\ Erase\ the\ arrow\ from\ his\ current\ position,\r\n\ calculate\ trajectory\ and\ re-draw\ at\ new\ position\r\n
+comment5.params=
+comment5.target=int\ giveXposition()
+comment5.text=\r\n\ Supply\ other\ classes\ with\ the\ current\ X\ position\ of\ the\ arrow\r\n
+comment6.params=
+comment6.target=int\ giveYposition()
+comment6.text=\r\n\ Supply\ other\ classes\ with\ the\ current\ Y\ position\ of\ the\ arrow\r\n
+numComments=7
