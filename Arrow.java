@@ -4,38 +4,39 @@ import java.lang.*;
 import java.util.Random;
 
 /**
- * Arrow
- * 
+ * Class Arrow calculates the trajectory of the "arrow". 
+ * This class is able to draw and erase the arrow.
  *
  * 
- * @author CS, SVC, JR 
- * @version v1.2 (02.06.2022 15:35)
+ * @author  Johannes Richter
+ *          Simon Cirdei
+ *          Christoph Schramm
+ *          
+ * @version v1.3 (02.06.2022 16:45)
  */
 
 public class Arrow extends Game
 {
-    private Color localcolor, colpl1, colpl2;      // local variant of color of the arrow
-    private Canvas screenbg;  // canvas where to plot the arrow
-    private int xPosition, yPosition;    // position at the start
-    private int localcurplay;  
-    Random r1 = new Random(); // random number between 0 and 1
-    Random r2 = new Random(); // random number between 0 and 1
+    private Color localcolor, colpl1, colpl2;       // local variant of color of the arrow
+    private Canvas screenbg;                        // canvas where to plot the arrow
+    private int xPosition, yPosition;               // position at the start
+    private int localcurplay;                       // count which players turn it is
+    Random r1 = new Random();                       // random number between 0 and 1
+    Random r2 = new Random();                       // random number between 0 and 1
     private double speed = super.speedMin + (super.speedMax-super.speedMin) * r1.nextDouble();   // may be 18-30
     private double angle = super.angleMin + (super.angleMax-super.angleMin) * r2.nextDouble();   // may be 10-60
-    private double time = 0;
+    private double time = 0;                        // time setting  
 
     /**
      * Constructor for instances of Arrow
      *
-     * @param xPos        x-coordinate of the arrow
-     * @param yPos        y-coordinate of the arrow
-     * @param ballcolor   color of the arrow
+     * @param inputcolor  color of the arrow
      * @param usedcanvas  canvas where to plot the arrow
      */
     public Arrow(Color inputcolor, Canvas usedcanvas)
     {
-        xPosition = super.arrowXpos;
-        yPosition = super.arrowYpos;
+        xPosition = super.arrowXpos;     //x-Position of the Arrow: access from super-class   
+        yPosition = super.arrowYpos;     //y-Position of the Arrow: access from super-class  
         screenbg = usedcanvas;
         localcolor = inputcolor;
     }

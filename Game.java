@@ -3,12 +3,12 @@ import java.awt.Color;
 /**
  * 
  * @author JR, CS, SVC
- * @version v1.2 (02.06.2022 15:35)
+ * @version v1.3 (02.06.2022 16:45)
  */
 public class Game
 {
     private Terminal terminal;                                 //Global terminal
-    protected static final int canvasHeight = 700;             //Height of the canvas. Default: 700
+    protected static final int canvasHeight = 709;             //Height of the canvas. Default: 700
     protected static final int canvasWidth = 1000;             //Width of the canvas. Default: 1000
     protected static final int wallStart = 100;                //Start of the wall. Default: 100
     protected static final int wallThickness = 20;             //Thickness of the wall. Default: 20

@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Arrow
-comment0.text=\r\n\ Arrow\r\n\ \r\n\r\n\ \r\n\ @author\ CS,\ SVC,\ JR\ \r\n\ @version\ v1.2\ (02.06.2022\ 15\:35)\r\n
+comment0.text=\r\n\ Class\ Arrow\ calculates\ the\ trajectory\ of\ the\ "arrow".\ \r\n\ This\ class\ is\ able\ to\ draw\ and\ erase\ the\ arrow.\r\n\r\n\ \r\n\ @author\ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ \ \ \ \ \ \ \ \ \ \r\n\ @version\ v1.3\ (02.06.2022\ 16\:45)\r\n
 comment1.params=inputcolor\ usedcanvas
 comment1.target=Arrow(java.awt.Color,\ Canvas)
-comment1.text=\r\n\ Constructor\ for\ instances\ of\ Arrow\r\n\r\n\ @param\ xPos\ \ \ \ \ \ \ \ x-coordinate\ of\ the\ arrow\r\n\ @param\ yPos\ \ \ \ \ \ \ \ y-coordinate\ of\ the\ arrow\r\n\ @param\ ballcolor\ \ \ color\ of\ the\ arrow\r\n\ @param\ usedcanvas\ \ canvas\ where\ to\ plot\ the\ arrow\r\n
+comment1.text=\r\n\ Constructor\ for\ instances\ of\ Arrow\r\n\r\n\ @param\ inputcolor\ \ color\ of\ the\ arrow\r\n\ @param\ usedcanvas\ \ canvas\ where\ to\ plot\ the\ arrow\r\n
 comment2.params=
 comment2.target=void\ draw()
 comment2.text=\r\n\ Draw\ the\ arrow\ on\ the\ current\ position\ on\ the\ canvas\r\n

@@ -1,29 +1,38 @@
 import java.awt.*;
 
 /**
- * Beschreiben Sie hier die Klasse Points.
+ * The class points sets the color of the player-scores 
+ * and prints the scores on the dashboard.
  * 
- * @author (Ihr Name) 
- * @version v1.2 (02.06.2022 15:35)
+ * @author      Johannes Richter
+ *              Simon Cirdei
+ *              Christoph Schramm
+ *          
+ * @version     v1.3 (02.06.2022 16:45)
  */
 public class Points extends Game
 {
-    private Color textcolor;      // color of the text
-    private Canvas screenbg;  // canvas where to plot the arrow
-    private int player;
-    private int yPosition;
-    private int score;
+    private Color textcolor;        // color of the text
+    private Canvas screenbg;        // canvas where to plot the points
+    private int player;             // player
+    private int yPosition;          // yposition of the points
+    private int score;              // score 
 
     /**
-     * Konstruktor für Objekte der Klasse Points
+     * Constructor for instances of Points
+     *
+     * @param playerno    current player
+     * @param playerscore score of player    
+     * @param usedcanvas  canvas where to plot the points/score 
      */
     public Points(int playerno, int playerscore, Canvas usedcanvas)
     {
         player = playerno;
         score = playerscore;
         screenbg = usedcanvas;
-        yPosition = super.scoreYpos + (player-1) * 20;
+        yPosition = super.scoreYpos + (player-1) * 20;  //y-Position of the score: access from super-class  
         
+        //proof of player and set the color of this score  
         if(player == 1) {
             textcolor = super.colorPlayer1;
         } else if(player == 2) {
@@ -32,7 +41,7 @@ public class Points extends Game
     }
     
     /**
-     * Mal den Score auf die Fläche
+     * Prints the score on the dashboard
      */
     
     public void draw()

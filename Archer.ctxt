@@ -1,17 +1,21 @@
 #BlueJ class context
 comment0.target=Archer
-comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Archer.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ v1.2\ (02.06.2022\ 15\:35)\r\n
+comment0.text=\r\n\ Class\ Archer\ creates\ and\ draws\ the\ archers\ on\ the\ Canvas.\r\n\ This\ class\ is\ able\ to\ move\ the\ archers\ from\ right\ to\ left\ /\ left\ to\ right.\r\n\r\n\ \r\n\ @author\ \ Johannes\ Richter\r\n\ \ \ \ \ \ \ \ \ \ Simon\ Cirdei\r\n\ \ \ \ \ \ \ \ \ \ Christoph\ Schramm\r\n\ \ \ \ \ \ \ \ \ \ \r\n\ @version\ v1.3\ (02.06.2022\ 16\:45)\r\n
 comment1.params=inputplayer\ archercolor\ usedcanvas
 comment1.target=Archer(int,\ java.awt.Color,\ Canvas)
+comment1.text=\r\n\ Constructor\ for\ instances\ of\ Archer\r\n\r\n\ @param\ inputplayer\ \ \ \ current\ player\r\n\ @param\ archercolor\ \ \ color\ of\ the\ archer\r\n\ @param\ usedcanvas\ \ canvas\ where\ to\ plot\ the\ arrow\r\n
 comment2.params=
 comment2.target=void\ draw()
-comment2.text=\r\n\ Es\ wird\ ein\ Archer\ an\ der\ von\ CanvasBG\ vorgegebenen\ Stelle\ und\ Farbe\r\n\ gezeichnet\r\n\ \r\n
+comment2.text=\r\n\ The\ archer\ will\ be\ painted\ at\ the\ pre-set-position\ on\ the\ Canvas\r\n
 comment3.params=
-comment3.target=void\ eraseArcher()
+comment3.target=void\ erase()
+comment3.text=\r\n\ The\ archer\ will\ be\ erased\r\n
 comment4.params=
 comment4.target=void\ stepRight()
+comment4.text=\r\n\ The\ archer\ moves\ to\ the\ right\r\n
 comment5.params=
 comment5.target=void\ stepLeft()
+comment5.text=\r\n\ The\ archer\ moves\ to\ the\ right\r\n
 comment6.params=
 comment6.target=int\ giveXposition()
 comment6.text=\r\n\ Supply\ other\ classes\ with\ the\ current\ X\ position\ of\ the\ Archer\r\n
