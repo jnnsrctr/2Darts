@@ -1,3 +1,7 @@
+################################
+# Forked from github/gitignore #
+################################
+
 # Compiled class file
 *.class
 
@@ -6,6 +10,8 @@
 
 # BlueJ files
 *.ctxt
+# BlueJ runtime file
+__SHELL*.java
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
