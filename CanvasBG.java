@@ -16,7 +16,7 @@ import java.util.*;
  *          Simon Cirdei
  *          Christoph Schramm
  *          
- * @version v1.5 (03.06.2022 19:20)
+ * @version v1.5.3 (09.11.2023 17:18)
  */
 public class CanvasBG extends Game
 {
@@ -290,7 +290,7 @@ public class CanvasBG extends Game
     {
         screenbg.setForegroundColor(super.bgColor);
         // if the arrow hit the target, it will be re painted
-        Rectangle hitarrows = new Rectangle(super.wallThickness, targettop, super.arrowWidth, super.canvasHeight-targettop);
+        Rectangle hitarrows = new Rectangle(super.wallThickness, super.wallStart, super.arrowWidth, super.canvasHeight-super.wallStart);
         screenbg.fill(hitarrows);
         // if the arrow did not hit the target, it will be re painted
         Rectangle lostarrows = new Rectangle(super.wallThickness, super.canvasHeight - super.arrowHeight,

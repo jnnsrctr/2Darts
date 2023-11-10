@@ -6,12 +6,12 @@ import java.awt.Color;
  *          Simon Cirdei
  *          Christoph Schramm
  *          
- * @version v1.5 (03.06.2022 19:20)
+ * @version v1.5.3 (09.11.2023 17:18)
  */
 public class Game
 {
     private Terminal terminal;                                 //Global terminal
-    protected final String version            = "v1.5";        //This version number
+    protected final String version            = "v1.5.3";        //This version number
     protected static int canvasHeight         = 700;           //Height of the canvas in px.                Default: 700
     protected static int canvasWidth          = 1000;          //Width of the canvas in px.                 Default: 1000
     protected static int wallStart            = 100;           //Start of the wall in px.                   Default: 100
